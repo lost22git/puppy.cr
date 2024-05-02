@@ -17,8 +17,8 @@ check *flags:
 docs *flags:
   crystal docs {{ flags }}
 
-test *spec_files:
-  crystal spec --progress {{ spec_files }}
+test *spec_files_or_flags:
+  crystal spec --progress {{ spec_files_or_flags }}
 
 build *flags:
   shards build --production --release --no-debug --verbose --progress --time {{ flags }}

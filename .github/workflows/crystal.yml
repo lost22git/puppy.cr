@@ -42,3 +42,5 @@ jobs:
         run: crystal version
       - name: Run tests
         run: crystal spec --verbose --progress --time --stats
+      - name: Run tests without zlib and openssl
+        run: crystal spec --verbose --progress --time --stats -Dwithout_openssl -Dwithout_zlib

@@ -16,7 +16,7 @@ describe Puppy do
     JSON.parse(resp.body_io)["gzipped"].as_bool.should be_true
   end
 
-  # Failed!
+  # Failed both WinHttp and crystal std Compress::Deflate::Reader
   #
   # trace: https://github.com/crystal-lang/crystal/issues/5221
   #

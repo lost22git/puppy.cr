@@ -118,6 +118,23 @@ module Puppy
         raise Error.new "WinHttpAddRequestHeaders error: " + LibC.GetLastError.to_s
       end
 
+      {% if flag?(:without_zlib) %}
+        if decompress
+          # set decompression option
+          #
+          decompression_flags = LibWinHttp::WINHTTP_DECOMPRESSION_FLAG_ALL
+          dbg! decompression_flags
+          if LibWinHttp.WinHttpSetOption(
+               hRequest,
+               LibWinHttp::WINHTTP_OPTION_DECOMPRESSION,
+               pointerof(decompression_flags),
+               sizeof(typeof(decompression_flags))
+             ) == 0
+            raise Error.new "Set decompression option: WinHttpSetOption error: " + LibC.GetLastError.to_s
+          end
+        end
+      {% end %}
+
       # send request
       #
       request_body_buf = req.body.try &.getb_to_end || Bytes.new(0)
@@ -148,15 +165,15 @@ module Puppy
           # If this is a certificate error but we should allow any HTTPS cert,
           # we need to set some options and retry sending the request.
           # https://stackoverflow.com/questions/19338395/how-do-you-use-winhttp-to-do-ssl-with-a-self-signed-cert
-          flags : LibWinHttp::DWORD = LibWinHttp::SECURITY_FLAG_IGNORE_UNKNOWN_CA |
+          security_flags : LibWinHttp::DWORD = LibWinHttp::SECURITY_FLAG_IGNORE_UNKNOWN_CA |
             LibWinHttp::SECURITY_FLAG_IGNORE_CERT_WRONG_USAGE |
             LibWinHttp::SECURITY_FLAG_IGNORE_CERT_CN_INVALID |
             LibWinHttp::SECURITY_FLAG_IGNORE_CERT_DATE_INVALID
           if LibWinHttp.WinHttpSetOption(
                hRequest,
                LibWinHttp::WINHTTP_OPTION_SECURITY_FLAGS,
-               pointerof(flags),
-               sizeof(typeof(flags))
+               pointerof(security_flags),
+               sizeof(typeof(security_flags))
              ) == 0
             raise Error.new "WinHttpSetOption error: " + LibC.GetLastError.to_s
           end
@@ -268,10 +285,13 @@ module Puppy
 
       # decompress response body
       #
-      if decompress
-        content_encoding = response_headers["content-encoding"]?
-        response_body_io = decompress(response_body_io, format: content_encoding) if content_encoding
-      end
+      {% if !flag?(:without_zlib) %}
+        if decompress
+          content_encoding = response_headers["content-encoding"]?
+          dbg! content_encoding
+          response_body_io = decompress(response_body_io, format: content_encoding) if content_encoding
+        end
+      {% end %}
 
       # return HTTP::Client::Response
       #

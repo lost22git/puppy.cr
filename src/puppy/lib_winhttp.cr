@@ -18,6 +18,7 @@ lib Puppy::LibWinHttp
   WINHTTP_QUERY_RAW_HEADERS_CRLF =         22_u32
   WINHTTP_OPTION_SECURITY_FLAGS  =         31_u32
   WINHTTP_OPTION_URL             =         34_u32
+  WINHTTP_OPTION_DECOMPRESSION   =        118_u32
 
   ERROR_INSUFFICIENT_BUFFER            =   122_u32
   ERROR_WINHTTP_TIMEOUT                = 12002_u32
