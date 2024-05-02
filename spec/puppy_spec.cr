@@ -16,22 +16,18 @@ describe Puppy do
     JSON.parse(resp.body_io)["gzipped"].as_bool.should be_true
   end
 
-  # Failed both WinHttp and crystal std Compress::Deflate::Reader
-  #
-  # trace: https://github.com/crystal-lang/crystal/issues/5221
-  #
-  # it "deflate" do
-  #   # curl -X GET "https://httpbin.org/deflate" -H  "accept: application/json"
-  #   #
-  #   headers = HTTP::Headers.new
-  #   headers["content-type"] = "application/json"
-  #   url = "https://httpbin.org/deflate"
-  #   method = "GET"
-  #   req = HTTP::Request.new method, url, headers: headers
+  it "deflate" do
+    # curl -X GET "https://httpbin.org/deflate" -H  "accept: application/json"
+    #
+    headers = HTTP::Headers.new
+    headers["content-type"] = "application/json"
+    url = "https://httpbin.org/deflate"
+    method = "GET"
+    req = HTTP::Request.new method, url, headers: headers
 
-  #   resp = Puppy.fetch req, 10.seconds
-  #   JSON.parse(resp.body_io)["deflated"].as_bool.should be_true
-  # end
+    resp = Puppy.fetch req, 10.seconds
+    JSON.parse(resp.body_io)["deflated"].as_bool.should be_true
+  end
 
   it "status code" do
     # curl -X GET "https://httpbin.org/status/444" -H  "accept: text/plain"

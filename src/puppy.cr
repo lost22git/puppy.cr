@@ -2,7 +2,9 @@ require "uri"
 require "http/headers"
 require "http/request"
 require "http/client/response"
+
 require "compress/gzip"
+require "compress/zlib"
 
 require "./puppy/lib_winhttp"
 require "./puppy/version"
@@ -13,7 +15,7 @@ module Puppy
   RESPONSE_BODY_INIT_SIZE = 8 * 1024
   UA                      = "Puppy #{VERSION} by WinHttp"
 
-  class Puppy::Error < Exception
+  class Error < Exception
   end
 
   # :nodoc:
@@ -117,23 +119,6 @@ module Puppy
          ) == 0
         raise Error.new "WinHttpAddRequestHeaders error: " + LibC.GetLastError.to_s
       end
-
-      {% if flag?(:without_zlib) %}
-        if decompress
-          # set decompression option
-          #
-          decompression_flags = LibWinHttp::WINHTTP_DECOMPRESSION_FLAG_ALL
-          dbg! decompression_flags
-          if LibWinHttp.WinHttpSetOption(
-               hRequest,
-               LibWinHttp::WINHTTP_OPTION_DECOMPRESSION,
-               pointerof(decompression_flags),
-               sizeof(typeof(decompression_flags))
-             ) == 0
-            raise Error.new "Set decompression option: WinHttpSetOption error: " + LibC.GetLastError.to_s
-          end
-        end
-      {% end %}
 
       # send request
       #
@@ -249,7 +234,7 @@ module Puppy
 
       # convert response headers to HTTP::Headers
       #
-      response_headers = parseResponseHeaders response_headers_buf
+      response_headers = parse_response_headers response_headers_buf
       dbg! response_headers
       if response_headers.size == 0
         raise Error.new "Failed to parsing response headers"
@@ -285,13 +270,11 @@ module Puppy
 
       # decompress response body
       #
-      {% if !flag?(:without_zlib) %}
-        if decompress
-          content_encoding = response_headers["content-encoding"]?
-          dbg! content_encoding
-          response_body_io = decompress(response_body_io, format: content_encoding) if content_encoding
-        end
-      {% end %}
+      if decompress
+        content_encoding = response_headers["content-encoding"]?
+        dbg! content_encoding
+        response_body_io = decompress(response_body_io, format: content_encoding) if content_encoding
+      end
 
       # return HTTP::Client::Response
       #
@@ -303,7 +286,7 @@ module Puppy
     end
   end
 
-  private def self.parseResponseHeaders(buf : Slice(UInt16)) : HTTP::Headers
+  private def self.parse_response_headers(buf : Slice(UInt16)) : HTTP::Headers
     result = HTTP::Headers.new
     String.from_utf16(buf)
       .split(CRLF, remove_empty: true)
@@ -320,7 +303,7 @@ module Puppy
     when "gzip"
       Compress::Gzip::Reader.new io, sync_close: true
     when "deflate"
-      Compress::Deflate::Reader.new io, sync_close: true
+      Compress::Zlib::Reader.new io, sync_close: true
     else
       io
     end
