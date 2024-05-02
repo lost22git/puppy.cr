@@ -1,0 +1,13 @@
+name: puppy
+version: 0.1.0
+
+authors:
+  - lost <lost>
+
+crystal: '>= 1.12.1'
+
+license: MIT
+
+development_dependencies:
+  ameba:
+    github: crystal-ameba/ameba
