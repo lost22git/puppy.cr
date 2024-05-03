@@ -37,9 +37,8 @@ module Puppy::Fetch
         proxy_flag = LibWinHttp::WINHTTP_ACCESS_TYPE_AUTOMATIC_PROXY
         w_proxy_addr = "".to_utf16
       end
-      user_agent = (req.headers["user-agent"]? || UA).to_utf16
       hSession = LibWinHttp.WinHttpOpen(
-        user_agent,
+        nil,
         proxy_flag,
         w_proxy_addr,
         nil,

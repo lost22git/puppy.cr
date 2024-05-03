@@ -3,8 +3,11 @@ require "http/client/response"
 require "http/headers"
 
 require "./puppy/fetch"
+require "./puppy/version"
 
 module Puppy
+  UA = "Puppy #{VERSION}"
+
   # Executes a request.
   # The response will have its body_io as a `IO`, accessed via `HTTP::Client::Response#body_io`.
   #
@@ -15,6 +18,7 @@ module Puppy
   # response.body # => "..."
   # ```
   def self.exec(request : HTTP::Request, decompress : Bool = true, timeout : Time::Span = 10.seconds, trust_all_certs : Bool = false, proxy_addr : String? = nil) : HTTP::Client::Response
+    request.headers["User-Agent"] = UA unless request.headers["User-Agent"]?
     Fetch.fetch request, decompress, timeout, trust_all_certs, proxy_addr
   end
 
@@ -28,7 +32,7 @@ module Puppy
     # response = Puppy.{{method.id}}("https://www.example.com", headers: HTTP::Headers{"User-Agent" => "AwesomeApp"}, body: "Hello!")
     # response.body #=> "..."
     # ```
-    def self.{{method.id}}(path : String, headers : HTTP::Headers? = nil, body : IO | Bytes | String | Nil = nil,decompress : Bool = true, timeout : Time::Span = 10.seconds, trust_all_certs : Bool = false, proxy_addr : String? = nil) : HTTP::Client::Response
+    def self.{{method.id}}(path : String, headers : HTTP::Headers? = nil, body : IO | Bytes | String | Nil = nil, decompress : Bool = true, timeout : Time::Span = 10.seconds, trust_all_certs : Bool = false, proxy_addr : String? = nil) : HTTP::Client::Response
       request = HTTP::Request.new {{ method.upcase }}, path, headers, body
       exec request, decompress, timeout, trust_all_certs, proxy_addr
     end

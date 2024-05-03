@@ -1,7 +1,4 @@
-require "./version"
-
 module Puppy::Fetch
-  UA                      = "Puppy #{VERSION}"
   CRLF                    = "\r\n"
   RESPONSE_BODY_MAX_SIZE  = 16 * (1024 * 1024)
   RESPONSE_BODY_INIT_SIZE = 8 * 1024

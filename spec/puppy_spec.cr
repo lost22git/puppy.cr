@@ -28,11 +28,9 @@ describe Puppy do
   it "status code" do
     # curl -X GET "https://httpbin.org/status/444" -H  "accept: text/plain"
     #
-    headers = HTTP::Headers.new
-    headers["accept-encoding"] = "gzip"
     url = "https://httpbin.org/status/444"
 
-    resp = Puppy.get url, headers
+    resp = Puppy.get url
     resp.status_code.should eq 444
   end
 
@@ -66,7 +64,7 @@ describe Puppy do
 
     resp = Puppy.get url, headers
     ua = JSON.parse(resp.body_io)["user-agent"].as_s
-    ua.should eq Puppy::Fetch::UA
+    ua.should eq Puppy::UA
 
     # use custom UA
     headers["user-agent"] = ";-)"
