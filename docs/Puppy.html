@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Crystal Docs 1.11.2">
-<meta name="crystal_docs.project_version" content="main">
+<meta name="crystal_docs.project_version" content="main-dev">
 <meta name="crystal_docs.project_name" content="puppy">
 
 
@@ -14,7 +14,7 @@
 <script type="text/javascript" src="js/doc.js"></script>
 
   <meta name="repository-name" content="puppy">
-  <title>Puppy - puppy main</title>
+  <title>Puppy - puppy main-dev</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "";
   </script>
@@ -45,7 +45,7 @@
       </h1>
 
       <span class="project-version">
-        main
+        main-dev
       </span>
     </div>
   </div>
@@ -62,8 +62,18 @@
       
         <ul>
   
-  <li class=" " data-id="puppy/Puppy/Error" data-name="puppy::error">
-      <a href="Puppy/Error.html">Error</a>
+  <li class="parent " data-id="puppy/Puppy/Fetch" data-name="puppy::fetch">
+      <a href="Puppy/Fetch.html">Fetch</a>
+      
+        <ul>
+  
+  <li class=" " data-id="puppy/Puppy/Fetch/Error" data-name="puppy::fetch::error">
+      <a href="Puppy/Fetch/Error.html">Error</a>
+      
+    </li>
+  
+</ul>
+
       
     </li>
   
@@ -112,62 +122,17 @@
   </h2>
   
     
-      <a href="https://github.com/lost22git/puppy.cr/blob/f7c552cd53c9f28a85afa9fa4980ec9106628629/src\puppy.cr#L12" target="_blank">
-        src\puppy.cr
-      </a>
+      src\puppy.cr
     
     <br/>
   
     
-      <a href="https://github.com/lost22git/puppy.cr/blob/f7c552cd53c9f28a85afa9fa4980ec9106628629/src\puppy\lib_winhttp.cr#L6" target="_blank">
-        src\puppy\lib_winhttp.cr
-      </a>
-    
-    <br/>
-  
-    
-      <a href="https://github.com/lost22git/puppy.cr/blob/f7c552cd53c9f28a85afa9fa4980ec9106628629/src\puppy\version.cr#L1" target="_blank">
-        src\puppy\version.cr
-      </a>
+      src\puppy\version.cr
     
     <br/>
   
 
 
-
-  
-    <h2>
-      <a id="constant-summary" class="anchor" href="#constant-summary">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-      Constant Summary
-    </h2>
-  
-  <dl>
-    
-      <dt class="entry-const" id="CRLF">
-        <strong>CRLF</strong> = <code><span class="s">&quot;\r\n&quot;</span></code>
-      </dt>
-      
-    
-      <dt class="entry-const" id="RESPONSE_BODY_INIT_SIZE">
-        <strong>RESPONSE_BODY_INIT_SIZE</strong> = <code><span class="n">8</span> <span class="o">*</span> <span class="n">1024</span></code>
-      </dt>
-      
-    
-      <dt class="entry-const" id="RESPONSE_BODY_MAX_SIZE">
-        <strong>RESPONSE_BODY_MAX_SIZE</strong> = <code><span class="n">16</span> <span class="o">*</span> (<span class="n">1024</span> <span class="o">*</span> <span class="n">1024</span>)</code>
-      </dt>
-      
-    
-      <dt class="entry-const" id="UA">
-        <strong>UA</strong> = <code><span class="s">&quot;Puppy </span><span class="i">#{</span><span class="t">VERSION</span><span class="i">}</span><span class="s"> by WinHttp&quot;</span></code>
-      </dt>
-      
-    
-  </dl>
 
 
 
@@ -184,7 +149,156 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#fetch%28req%3AHTTP%3A%3ARequest%2Ctimeout%3ATime%3A%3ASpan%2Cproxy_addr%3AURI%7CNil%3Dnil%2Cdecompress%3ABool%3Dtrue%2Ctrust_all_certs%3ABool%3Dfalse%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method" class="signature"><strong>.fetch</strong>(req : HTTP::Request, timeout : Time::Span, proxy_addr : URI | Nil = <span class="n">nil</span>, decompress : Bool = <span class="n">true</span>, trust_all_certs : Bool = <span class="n">false</span>) : HTTP::Client::Response</a>
+        <a href="#delete%28path%3AString%2Cheaders%3AHTTP%3A%3AHeaders%7CNil%3Dnil%2Cbody%3AIO%7CBytes%7CString%7CNil%3Dnil%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method" class="signature"><strong>.delete</strong>(path : String, headers : HTTP::Headers | Nil = <span class="n">nil</span>, body : IO | Bytes | String | Nil = <span class="n">nil</span>, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response</a>
+        
+          <div class="summary"><p>Executes a DELETE request.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#delete%28path%2Cheaders%3AHTTP%3A%3AHeaders%7CNil%3Dnil%2C%2A%2Cform%3AString%7CIO%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method" class="signature"><strong>.delete</strong>(path, headers : HTTP::Headers | Nil = <span class="n">nil</span>, *, form : String | IO, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response</a>
+        
+          <div class="summary"><p>Executes a DELETE request with form data and returns a <code>Response</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#delete%28path%2Cheaders%3AHTTP%3A%3AHeaders%7CNil%3Dnil%2C%2A%2Cform%3AHash%28String%2CString%29%7CNamedTuple%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method" class="signature"><strong>.delete</strong>(path, headers : HTTP::Headers | Nil = <span class="n">nil</span>, *, form : Hash(String, String) | NamedTuple, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response</a>
+        
+          <div class="summary"><p>Executes a DELETE request with form data and returns a <code>Response</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#exec%28request%3AHTTP%3A%3ARequest%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method" class="signature"><strong>.exec</strong>(request : HTTP::Request, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response</a>
+        
+          <div class="summary"><p>Executes a request.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#get%28path%3AString%2Cheaders%3AHTTP%3A%3AHeaders%7CNil%3Dnil%2Cbody%3AIO%7CBytes%7CString%7CNil%3Dnil%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method" class="signature"><strong>.get</strong>(path : String, headers : HTTP::Headers | Nil = <span class="n">nil</span>, body : IO | Bytes | String | Nil = <span class="n">nil</span>, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response</a>
+        
+          <div class="summary"><p>Executes a GET request.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#get%28path%2Cheaders%3AHTTP%3A%3AHeaders%7CNil%3Dnil%2C%2A%2Cform%3AString%7CIO%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method" class="signature"><strong>.get</strong>(path, headers : HTTP::Headers | Nil = <span class="n">nil</span>, *, form : String | IO, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response</a>
+        
+          <div class="summary"><p>Executes a GET request with form data and returns a <code>Response</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#get%28path%2Cheaders%3AHTTP%3A%3AHeaders%7CNil%3Dnil%2C%2A%2Cform%3AHash%28String%2CString%29%7CNamedTuple%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method" class="signature"><strong>.get</strong>(path, headers : HTTP::Headers | Nil = <span class="n">nil</span>, *, form : Hash(String, String) | NamedTuple, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response</a>
+        
+          <div class="summary"><p>Executes a GET request with form data and returns a <code>Response</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#head%28path%3AString%2Cheaders%3AHTTP%3A%3AHeaders%7CNil%3Dnil%2Cbody%3AIO%7CBytes%7CString%7CNil%3Dnil%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method" class="signature"><strong>.head</strong>(path : String, headers : HTTP::Headers | Nil = <span class="n">nil</span>, body : IO | Bytes | String | Nil = <span class="n">nil</span>, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response</a>
+        
+          <div class="summary"><p>Executes a HEAD request.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#head%28path%2Cheaders%3AHTTP%3A%3AHeaders%7CNil%3Dnil%2C%2A%2Cform%3AString%7CIO%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method" class="signature"><strong>.head</strong>(path, headers : HTTP::Headers | Nil = <span class="n">nil</span>, *, form : String | IO, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response</a>
+        
+          <div class="summary"><p>Executes a HEAD request with form data and returns a <code>Response</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#head%28path%2Cheaders%3AHTTP%3A%3AHeaders%7CNil%3Dnil%2C%2A%2Cform%3AHash%28String%2CString%29%7CNamedTuple%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method" class="signature"><strong>.head</strong>(path, headers : HTTP::Headers | Nil = <span class="n">nil</span>, *, form : Hash(String, String) | NamedTuple, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response</a>
+        
+          <div class="summary"><p>Executes a HEAD request with form data and returns a <code>Response</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#options%28path%3AString%2Cheaders%3AHTTP%3A%3AHeaders%7CNil%3Dnil%2Cbody%3AIO%7CBytes%7CString%7CNil%3Dnil%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method" class="signature"><strong>.options</strong>(path : String, headers : HTTP::Headers | Nil = <span class="n">nil</span>, body : IO | Bytes | String | Nil = <span class="n">nil</span>, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response</a>
+        
+          <div class="summary"><p>Executes a OPTIONS request.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#options%28path%2Cheaders%3AHTTP%3A%3AHeaders%7CNil%3Dnil%2C%2A%2Cform%3AString%7CIO%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method" class="signature"><strong>.options</strong>(path, headers : HTTP::Headers | Nil = <span class="n">nil</span>, *, form : String | IO, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response</a>
+        
+          <div class="summary"><p>Executes a OPTIONS request with form data and returns a <code>Response</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#options%28path%2Cheaders%3AHTTP%3A%3AHeaders%7CNil%3Dnil%2C%2A%2Cform%3AHash%28String%2CString%29%7CNamedTuple%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method" class="signature"><strong>.options</strong>(path, headers : HTTP::Headers | Nil = <span class="n">nil</span>, *, form : Hash(String, String) | NamedTuple, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response</a>
+        
+          <div class="summary"><p>Executes a OPTIONS request with form data and returns a <code>Response</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#patch%28path%3AString%2Cheaders%3AHTTP%3A%3AHeaders%7CNil%3Dnil%2Cbody%3AIO%7CBytes%7CString%7CNil%3Dnil%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method" class="signature"><strong>.patch</strong>(path : String, headers : HTTP::Headers | Nil = <span class="n">nil</span>, body : IO | Bytes | String | Nil = <span class="n">nil</span>, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response</a>
+        
+          <div class="summary"><p>Executes a PATCH request.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#patch%28path%2Cheaders%3AHTTP%3A%3AHeaders%7CNil%3Dnil%2C%2A%2Cform%3AString%7CIO%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method" class="signature"><strong>.patch</strong>(path, headers : HTTP::Headers | Nil = <span class="n">nil</span>, *, form : String | IO, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response</a>
+        
+          <div class="summary"><p>Executes a PATCH request with form data and returns a <code>Response</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#patch%28path%2Cheaders%3AHTTP%3A%3AHeaders%7CNil%3Dnil%2C%2A%2Cform%3AHash%28String%2CString%29%7CNamedTuple%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method" class="signature"><strong>.patch</strong>(path, headers : HTTP::Headers | Nil = <span class="n">nil</span>, *, form : Hash(String, String) | NamedTuple, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response</a>
+        
+          <div class="summary"><p>Executes a PATCH request with form data and returns a <code>Response</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#post%28path%3AString%2Cheaders%3AHTTP%3A%3AHeaders%7CNil%3Dnil%2Cbody%3AIO%7CBytes%7CString%7CNil%3Dnil%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method" class="signature"><strong>.post</strong>(path : String, headers : HTTP::Headers | Nil = <span class="n">nil</span>, body : IO | Bytes | String | Nil = <span class="n">nil</span>, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response</a>
+        
+          <div class="summary"><p>Executes a POST request.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#post%28path%2Cheaders%3AHTTP%3A%3AHeaders%7CNil%3Dnil%2C%2A%2Cform%3AString%7CIO%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method" class="signature"><strong>.post</strong>(path, headers : HTTP::Headers | Nil = <span class="n">nil</span>, *, form : String | IO, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response</a>
+        
+          <div class="summary"><p>Executes a POST request with form data and returns a <code>Response</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#post%28path%2Cheaders%3AHTTP%3A%3AHeaders%7CNil%3Dnil%2C%2A%2Cform%3AHash%28String%2CString%29%7CNamedTuple%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method" class="signature"><strong>.post</strong>(path, headers : HTTP::Headers | Nil = <span class="n">nil</span>, *, form : Hash(String, String) | NamedTuple, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response</a>
+        
+          <div class="summary"><p>Executes a POST request with form data and returns a <code>Response</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#put%28path%3AString%2Cheaders%3AHTTP%3A%3AHeaders%7CNil%3Dnil%2Cbody%3AIO%7CBytes%7CString%7CNil%3Dnil%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method" class="signature"><strong>.put</strong>(path : String, headers : HTTP::Headers | Nil = <span class="n">nil</span>, body : IO | Bytes | String | Nil = <span class="n">nil</span>, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response</a>
+        
+          <div class="summary"><p>Executes a PUT request.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#put%28path%2Cheaders%3AHTTP%3A%3AHeaders%7CNil%3Dnil%2C%2A%2Cform%3AString%7CIO%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method" class="signature"><strong>.put</strong>(path, headers : HTTP::Headers | Nil = <span class="n">nil</span>, *, form : String | IO, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response</a>
+        
+          <div class="summary"><p>Executes a PUT request with form data and returns a <code>Response</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#put%28path%2Cheaders%3AHTTP%3A%3AHeaders%7CNil%3Dnil%2C%2A%2Cform%3AHash%28String%2CString%29%7CNamedTuple%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method" class="signature"><strong>.put</strong>(path, headers : HTTP::Headers | Nil = <span class="n">nil</span>, *, form : Hash(String, String) | NamedTuple, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response</a>
+        
+          <div class="summary"><p>Executes a PUT request with form data and returns a <code>Response</code>.</p></div>
         
       </li>
     
@@ -212,18 +326,516 @@
     Class Method Detail
   </h2>
   
-    <div class="entry-detail" id="fetch(req:HTTP::Request,timeout:Time::Span,proxy_addr:URI|Nil=nil,decompress:Bool=true,trust_all_certs:Bool=false):HTTP::Client::Response-class-method">
+    <div class="entry-detail" id="delete(path:String,headers:HTTP::Headers|Nil=nil,body:IO|Bytes|String|Nil=nil,decompress:Bool=true,timeout:Time::Span=10.seconds,trust_all_certs:Bool=false,proxy_addr:String|Nil=nil):HTTP::Client::Response-class-method">
       <div class="signature">
         
-        def self.<strong>fetch</strong>(req : HTTP::Request, timeout : Time::Span, proxy_addr : URI | Nil = <span class="n">nil</span>, decompress : Bool = <span class="n">true</span>, trust_all_certs : Bool = <span class="n">false</span>) : HTTP::Client::Response
+        def self.<strong>delete</strong>(path : String, headers : HTTP::Headers | Nil = <span class="n">nil</span>, body : IO | Bytes | String | Nil = <span class="n">nil</span>, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response
 
-        <a class="method-permalink" href="#fetch%28req%3AHTTP%3A%3ARequest%2Ctimeout%3ATime%3A%3ASpan%2Cproxy_addr%3AURI%7CNil%3Dnil%2Cdecompress%3ABool%3Dtrue%2Ctrust_all_certs%3ABool%3Dfalse%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method">#</a>
+        <a class="method-permalink" href="#delete%28path%3AString%2Cheaders%3AHTTP%3A%3AHeaders%7CNil%3Dnil%2Cbody%3AIO%7CBytes%7CString%7CNil%3Dnil%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method">#</a>
       </div>
+      
+        <div class="doc">
+          
+          <p>Executes a DELETE request.
+The response will have its body_io as a <code>IO</code>, accessed via <code>HTTP::Client::Response#body_io</code>.</p>
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;puppy&quot;</span>
+
+response <span class="o">=</span> <span class="t">Puppy</span>.delete(<span class="s">&quot;https://www.example.com&quot;</span>, headers: <span class="t">HTTP</span><span class="t">::</span><span class="t">Headers</span>{<span class="s">&quot;User-Agent&quot;</span> <span class="o">=&gt;</span> <span class="s">&quot;AwesomeApp&quot;</span>}, body: <span class="s">&quot;Hello!&quot;</span>)
+response.body <span class="c">#=&gt; &quot;...&quot;</span></code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/lost22git/puppy.cr/blob/f7c552cd53c9f28a85afa9fa4980ec9106628629/src\puppy.cr#L29" target="_blank">View source</a>]
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="delete(path,headers:HTTP::Headers|Nil=nil,*,form:String|IO,decompress:Bool=true,timeout:Time::Span=10.seconds,trust_all_certs:Bool=false,proxy_addr:String|Nil=nil):HTTP::Client::Response-class-method">
+      <div class="signature">
+        
+        def self.<strong>delete</strong>(path, headers : HTTP::Headers | Nil = <span class="n">nil</span>, *, form : String | IO, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response
+
+        <a class="method-permalink" href="#delete%28path%2Cheaders%3AHTTP%3A%3AHeaders%7CNil%3Dnil%2C%2A%2Cform%3AString%7CIO%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Executes a DELETE request with form data and returns a <code>Response</code>. The &quot;Content-Type&quot; header is set
+to &quot;application/x-www-form-urlencoded&quot;.</p>
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;puppy&quot;</span>
+
+response <span class="o">=</span> <span class="t">Puppy</span>.delete <span class="s">&quot;https://www.example.com&quot;</span>, form: <span class="s">&quot;foo=bar&quot;</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="delete(path,headers:HTTP::Headers|Nil=nil,*,form:Hash(String,String)|NamedTuple,decompress:Bool=true,timeout:Time::Span=10.seconds,trust_all_certs:Bool=false,proxy_addr:String|Nil=nil):HTTP::Client::Response-class-method">
+      <div class="signature">
+        
+        def self.<strong>delete</strong>(path, headers : HTTP::Headers | Nil = <span class="n">nil</span>, *, form : Hash(String, String) | NamedTuple, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response
+
+        <a class="method-permalink" href="#delete%28path%2Cheaders%3AHTTP%3A%3AHeaders%7CNil%3Dnil%2C%2A%2Cform%3AHash%28String%2CString%29%7CNamedTuple%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Executes a DELETE request with form data and returns a <code>Response</code>. The &quot;Content-Type&quot; header is set
+to &quot;application/x-www-form-urlencoded&quot;.</p>
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;puppy&quot;</span>
+
+response <span class="o">=</span> <span class="t">Puppy</span>.delete <span class="s">&quot;https://www.example.com&quot;</span>, form: {<span class="s">&quot;foo&quot;</span> <span class="o">=&gt;</span> <span class="s">&quot;bar&quot;</span>}</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="exec(request:HTTP::Request,decompress:Bool=true,timeout:Time::Span=10.seconds,trust_all_certs:Bool=false,proxy_addr:String|Nil=nil):HTTP::Client::Response-class-method">
+      <div class="signature">
+        
+        def self.<strong>exec</strong>(request : HTTP::Request, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response
+
+        <a class="method-permalink" href="#exec%28request%3AHTTP%3A%3ARequest%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Executes a request.
+The response will have its body_io as a <code>IO</code>, accessed via <code>HTTP::Client::Response#body_io</code>.</p>
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;puppy&quot;</span>
+request <span class="o">=</span> <span class="t">HTTP</span><span class="t">::</span><span class="t">Request</span>.new <span class="s">&quot;GET&quot;</span>, <span class="s">&quot;https://www.example.com&quot;</span>
+response <span class="o">=</span> <span class="t">Puppy</span>.exec(request, decompress: <span class="n">true</span>, timeout: <span class="n">10</span>.seconds, trust_all_certs: <span class="n">false</span>, proxy_addr: <span class="s">&quot;http://proxy_host:proxy_prort&quot;</span>)
+response.body <span class="c"># =&gt; &quot;...&quot;</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="get(path:String,headers:HTTP::Headers|Nil=nil,body:IO|Bytes|String|Nil=nil,decompress:Bool=true,timeout:Time::Span=10.seconds,trust_all_certs:Bool=false,proxy_addr:String|Nil=nil):HTTP::Client::Response-class-method">
+      <div class="signature">
+        
+        def self.<strong>get</strong>(path : String, headers : HTTP::Headers | Nil = <span class="n">nil</span>, body : IO | Bytes | String | Nil = <span class="n">nil</span>, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response
+
+        <a class="method-permalink" href="#get%28path%3AString%2Cheaders%3AHTTP%3A%3AHeaders%7CNil%3Dnil%2Cbody%3AIO%7CBytes%7CString%7CNil%3Dnil%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Executes a GET request.
+The response will have its body_io as a <code>IO</code>, accessed via <code>HTTP::Client::Response#body_io</code>.</p>
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;puppy&quot;</span>
+
+response <span class="o">=</span> <span class="t">Puppy</span>.get(<span class="s">&quot;https://www.example.com&quot;</span>, headers: <span class="t">HTTP</span><span class="t">::</span><span class="t">Headers</span>{<span class="s">&quot;User-Agent&quot;</span> <span class="o">=&gt;</span> <span class="s">&quot;AwesomeApp&quot;</span>}, body: <span class="s">&quot;Hello!&quot;</span>)
+response.body <span class="c">#=&gt; &quot;...&quot;</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="get(path,headers:HTTP::Headers|Nil=nil,*,form:String|IO,decompress:Bool=true,timeout:Time::Span=10.seconds,trust_all_certs:Bool=false,proxy_addr:String|Nil=nil):HTTP::Client::Response-class-method">
+      <div class="signature">
+        
+        def self.<strong>get</strong>(path, headers : HTTP::Headers | Nil = <span class="n">nil</span>, *, form : String | IO, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response
+
+        <a class="method-permalink" href="#get%28path%2Cheaders%3AHTTP%3A%3AHeaders%7CNil%3Dnil%2C%2A%2Cform%3AString%7CIO%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Executes a GET request with form data and returns a <code>Response</code>. The &quot;Content-Type&quot; header is set
+to &quot;application/x-www-form-urlencoded&quot;.</p>
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;puppy&quot;</span>
+
+response <span class="o">=</span> <span class="t">Puppy</span>.get <span class="s">&quot;https://www.example.com&quot;</span>, form: <span class="s">&quot;foo=bar&quot;</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="get(path,headers:HTTP::Headers|Nil=nil,*,form:Hash(String,String)|NamedTuple,decompress:Bool=true,timeout:Time::Span=10.seconds,trust_all_certs:Bool=false,proxy_addr:String|Nil=nil):HTTP::Client::Response-class-method">
+      <div class="signature">
+        
+        def self.<strong>get</strong>(path, headers : HTTP::Headers | Nil = <span class="n">nil</span>, *, form : Hash(String, String) | NamedTuple, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response
+
+        <a class="method-permalink" href="#get%28path%2Cheaders%3AHTTP%3A%3AHeaders%7CNil%3Dnil%2C%2A%2Cform%3AHash%28String%2CString%29%7CNamedTuple%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Executes a GET request with form data and returns a <code>Response</code>. The &quot;Content-Type&quot; header is set
+to &quot;application/x-www-form-urlencoded&quot;.</p>
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;puppy&quot;</span>
+
+response <span class="o">=</span> <span class="t">Puppy</span>.get <span class="s">&quot;https://www.example.com&quot;</span>, form: {<span class="s">&quot;foo&quot;</span> <span class="o">=&gt;</span> <span class="s">&quot;bar&quot;</span>}</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="head(path:String,headers:HTTP::Headers|Nil=nil,body:IO|Bytes|String|Nil=nil,decompress:Bool=true,timeout:Time::Span=10.seconds,trust_all_certs:Bool=false,proxy_addr:String|Nil=nil):HTTP::Client::Response-class-method">
+      <div class="signature">
+        
+        def self.<strong>head</strong>(path : String, headers : HTTP::Headers | Nil = <span class="n">nil</span>, body : IO | Bytes | String | Nil = <span class="n">nil</span>, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response
+
+        <a class="method-permalink" href="#head%28path%3AString%2Cheaders%3AHTTP%3A%3AHeaders%7CNil%3Dnil%2Cbody%3AIO%7CBytes%7CString%7CNil%3Dnil%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Executes a HEAD request.
+The response will have its body_io as a <code>IO</code>, accessed via <code>HTTP::Client::Response#body_io</code>.</p>
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;puppy&quot;</span>
+
+response <span class="o">=</span> <span class="t">Puppy</span>.head(<span class="s">&quot;https://www.example.com&quot;</span>, headers: <span class="t">HTTP</span><span class="t">::</span><span class="t">Headers</span>{<span class="s">&quot;User-Agent&quot;</span> <span class="o">=&gt;</span> <span class="s">&quot;AwesomeApp&quot;</span>}, body: <span class="s">&quot;Hello!&quot;</span>)
+response.body <span class="c">#=&gt; &quot;...&quot;</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="head(path,headers:HTTP::Headers|Nil=nil,*,form:String|IO,decompress:Bool=true,timeout:Time::Span=10.seconds,trust_all_certs:Bool=false,proxy_addr:String|Nil=nil):HTTP::Client::Response-class-method">
+      <div class="signature">
+        
+        def self.<strong>head</strong>(path, headers : HTTP::Headers | Nil = <span class="n">nil</span>, *, form : String | IO, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response
+
+        <a class="method-permalink" href="#head%28path%2Cheaders%3AHTTP%3A%3AHeaders%7CNil%3Dnil%2C%2A%2Cform%3AString%7CIO%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Executes a HEAD request with form data and returns a <code>Response</code>. The &quot;Content-Type&quot; header is set
+to &quot;application/x-www-form-urlencoded&quot;.</p>
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;puppy&quot;</span>
+
+response <span class="o">=</span> <span class="t">Puppy</span>.head <span class="s">&quot;https://www.example.com&quot;</span>, form: <span class="s">&quot;foo=bar&quot;</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="head(path,headers:HTTP::Headers|Nil=nil,*,form:Hash(String,String)|NamedTuple,decompress:Bool=true,timeout:Time::Span=10.seconds,trust_all_certs:Bool=false,proxy_addr:String|Nil=nil):HTTP::Client::Response-class-method">
+      <div class="signature">
+        
+        def self.<strong>head</strong>(path, headers : HTTP::Headers | Nil = <span class="n">nil</span>, *, form : Hash(String, String) | NamedTuple, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response
+
+        <a class="method-permalink" href="#head%28path%2Cheaders%3AHTTP%3A%3AHeaders%7CNil%3Dnil%2C%2A%2Cform%3AHash%28String%2CString%29%7CNamedTuple%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Executes a HEAD request with form data and returns a <code>Response</code>. The &quot;Content-Type&quot; header is set
+to &quot;application/x-www-form-urlencoded&quot;.</p>
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;puppy&quot;</span>
+
+response <span class="o">=</span> <span class="t">Puppy</span>.head <span class="s">&quot;https://www.example.com&quot;</span>, form: {<span class="s">&quot;foo&quot;</span> <span class="o">=&gt;</span> <span class="s">&quot;bar&quot;</span>}</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="options(path:String,headers:HTTP::Headers|Nil=nil,body:IO|Bytes|String|Nil=nil,decompress:Bool=true,timeout:Time::Span=10.seconds,trust_all_certs:Bool=false,proxy_addr:String|Nil=nil):HTTP::Client::Response-class-method">
+      <div class="signature">
+        
+        def self.<strong>options</strong>(path : String, headers : HTTP::Headers | Nil = <span class="n">nil</span>, body : IO | Bytes | String | Nil = <span class="n">nil</span>, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response
+
+        <a class="method-permalink" href="#options%28path%3AString%2Cheaders%3AHTTP%3A%3AHeaders%7CNil%3Dnil%2Cbody%3AIO%7CBytes%7CString%7CNil%3Dnil%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Executes a OPTIONS request.
+The response will have its body_io as a <code>IO</code>, accessed via <code>HTTP::Client::Response#body_io</code>.</p>
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;puppy&quot;</span>
+
+response <span class="o">=</span> <span class="t">Puppy</span>.options(<span class="s">&quot;https://www.example.com&quot;</span>, headers: <span class="t">HTTP</span><span class="t">::</span><span class="t">Headers</span>{<span class="s">&quot;User-Agent&quot;</span> <span class="o">=&gt;</span> <span class="s">&quot;AwesomeApp&quot;</span>}, body: <span class="s">&quot;Hello!&quot;</span>)
+response.body <span class="c">#=&gt; &quot;...&quot;</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="options(path,headers:HTTP::Headers|Nil=nil,*,form:String|IO,decompress:Bool=true,timeout:Time::Span=10.seconds,trust_all_certs:Bool=false,proxy_addr:String|Nil=nil):HTTP::Client::Response-class-method">
+      <div class="signature">
+        
+        def self.<strong>options</strong>(path, headers : HTTP::Headers | Nil = <span class="n">nil</span>, *, form : String | IO, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response
+
+        <a class="method-permalink" href="#options%28path%2Cheaders%3AHTTP%3A%3AHeaders%7CNil%3Dnil%2C%2A%2Cform%3AString%7CIO%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Executes a OPTIONS request with form data and returns a <code>Response</code>. The &quot;Content-Type&quot; header is set
+to &quot;application/x-www-form-urlencoded&quot;.</p>
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;puppy&quot;</span>
+
+response <span class="o">=</span> <span class="t">Puppy</span>.options <span class="s">&quot;https://www.example.com&quot;</span>, form: <span class="s">&quot;foo=bar&quot;</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="options(path,headers:HTTP::Headers|Nil=nil,*,form:Hash(String,String)|NamedTuple,decompress:Bool=true,timeout:Time::Span=10.seconds,trust_all_certs:Bool=false,proxy_addr:String|Nil=nil):HTTP::Client::Response-class-method">
+      <div class="signature">
+        
+        def self.<strong>options</strong>(path, headers : HTTP::Headers | Nil = <span class="n">nil</span>, *, form : Hash(String, String) | NamedTuple, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response
+
+        <a class="method-permalink" href="#options%28path%2Cheaders%3AHTTP%3A%3AHeaders%7CNil%3Dnil%2C%2A%2Cform%3AHash%28String%2CString%29%7CNamedTuple%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Executes a OPTIONS request with form data and returns a <code>Response</code>. The &quot;Content-Type&quot; header is set
+to &quot;application/x-www-form-urlencoded&quot;.</p>
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;puppy&quot;</span>
+
+response <span class="o">=</span> <span class="t">Puppy</span>.options <span class="s">&quot;https://www.example.com&quot;</span>, form: {<span class="s">&quot;foo&quot;</span> <span class="o">=&gt;</span> <span class="s">&quot;bar&quot;</span>}</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="patch(path:String,headers:HTTP::Headers|Nil=nil,body:IO|Bytes|String|Nil=nil,decompress:Bool=true,timeout:Time::Span=10.seconds,trust_all_certs:Bool=false,proxy_addr:String|Nil=nil):HTTP::Client::Response-class-method">
+      <div class="signature">
+        
+        def self.<strong>patch</strong>(path : String, headers : HTTP::Headers | Nil = <span class="n">nil</span>, body : IO | Bytes | String | Nil = <span class="n">nil</span>, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response
+
+        <a class="method-permalink" href="#patch%28path%3AString%2Cheaders%3AHTTP%3A%3AHeaders%7CNil%3Dnil%2Cbody%3AIO%7CBytes%7CString%7CNil%3Dnil%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Executes a PATCH request.
+The response will have its body_io as a <code>IO</code>, accessed via <code>HTTP::Client::Response#body_io</code>.</p>
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;puppy&quot;</span>
+
+response <span class="o">=</span> <span class="t">Puppy</span>.patch(<span class="s">&quot;https://www.example.com&quot;</span>, headers: <span class="t">HTTP</span><span class="t">::</span><span class="t">Headers</span>{<span class="s">&quot;User-Agent&quot;</span> <span class="o">=&gt;</span> <span class="s">&quot;AwesomeApp&quot;</span>}, body: <span class="s">&quot;Hello!&quot;</span>)
+response.body <span class="c">#=&gt; &quot;...&quot;</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="patch(path,headers:HTTP::Headers|Nil=nil,*,form:String|IO,decompress:Bool=true,timeout:Time::Span=10.seconds,trust_all_certs:Bool=false,proxy_addr:String|Nil=nil):HTTP::Client::Response-class-method">
+      <div class="signature">
+        
+        def self.<strong>patch</strong>(path, headers : HTTP::Headers | Nil = <span class="n">nil</span>, *, form : String | IO, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response
+
+        <a class="method-permalink" href="#patch%28path%2Cheaders%3AHTTP%3A%3AHeaders%7CNil%3Dnil%2C%2A%2Cform%3AString%7CIO%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Executes a PATCH request with form data and returns a <code>Response</code>. The &quot;Content-Type&quot; header is set
+to &quot;application/x-www-form-urlencoded&quot;.</p>
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;puppy&quot;</span>
+
+response <span class="o">=</span> <span class="t">Puppy</span>.patch <span class="s">&quot;https://www.example.com&quot;</span>, form: <span class="s">&quot;foo=bar&quot;</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="patch(path,headers:HTTP::Headers|Nil=nil,*,form:Hash(String,String)|NamedTuple,decompress:Bool=true,timeout:Time::Span=10.seconds,trust_all_certs:Bool=false,proxy_addr:String|Nil=nil):HTTP::Client::Response-class-method">
+      <div class="signature">
+        
+        def self.<strong>patch</strong>(path, headers : HTTP::Headers | Nil = <span class="n">nil</span>, *, form : Hash(String, String) | NamedTuple, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response
+
+        <a class="method-permalink" href="#patch%28path%2Cheaders%3AHTTP%3A%3AHeaders%7CNil%3Dnil%2C%2A%2Cform%3AHash%28String%2CString%29%7CNamedTuple%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Executes a PATCH request with form data and returns a <code>Response</code>. The &quot;Content-Type&quot; header is set
+to &quot;application/x-www-form-urlencoded&quot;.</p>
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;puppy&quot;</span>
+
+response <span class="o">=</span> <span class="t">Puppy</span>.patch <span class="s">&quot;https://www.example.com&quot;</span>, form: {<span class="s">&quot;foo&quot;</span> <span class="o">=&gt;</span> <span class="s">&quot;bar&quot;</span>}</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="post(path:String,headers:HTTP::Headers|Nil=nil,body:IO|Bytes|String|Nil=nil,decompress:Bool=true,timeout:Time::Span=10.seconds,trust_all_certs:Bool=false,proxy_addr:String|Nil=nil):HTTP::Client::Response-class-method">
+      <div class="signature">
+        
+        def self.<strong>post</strong>(path : String, headers : HTTP::Headers | Nil = <span class="n">nil</span>, body : IO | Bytes | String | Nil = <span class="n">nil</span>, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response
+
+        <a class="method-permalink" href="#post%28path%3AString%2Cheaders%3AHTTP%3A%3AHeaders%7CNil%3Dnil%2Cbody%3AIO%7CBytes%7CString%7CNil%3Dnil%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Executes a POST request.
+The response will have its body_io as a <code>IO</code>, accessed via <code>HTTP::Client::Response#body_io</code>.</p>
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;puppy&quot;</span>
+
+response <span class="o">=</span> <span class="t">Puppy</span>.post(<span class="s">&quot;https://www.example.com&quot;</span>, headers: <span class="t">HTTP</span><span class="t">::</span><span class="t">Headers</span>{<span class="s">&quot;User-Agent&quot;</span> <span class="o">=&gt;</span> <span class="s">&quot;AwesomeApp&quot;</span>}, body: <span class="s">&quot;Hello!&quot;</span>)
+response.body <span class="c">#=&gt; &quot;...&quot;</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="post(path,headers:HTTP::Headers|Nil=nil,*,form:String|IO,decompress:Bool=true,timeout:Time::Span=10.seconds,trust_all_certs:Bool=false,proxy_addr:String|Nil=nil):HTTP::Client::Response-class-method">
+      <div class="signature">
+        
+        def self.<strong>post</strong>(path, headers : HTTP::Headers | Nil = <span class="n">nil</span>, *, form : String | IO, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response
+
+        <a class="method-permalink" href="#post%28path%2Cheaders%3AHTTP%3A%3AHeaders%7CNil%3Dnil%2C%2A%2Cform%3AString%7CIO%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Executes a POST request with form data and returns a <code>Response</code>. The &quot;Content-Type&quot; header is set
+to &quot;application/x-www-form-urlencoded&quot;.</p>
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;puppy&quot;</span>
+
+response <span class="o">=</span> <span class="t">Puppy</span>.post <span class="s">&quot;https://www.example.com&quot;</span>, form: <span class="s">&quot;foo=bar&quot;</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="post(path,headers:HTTP::Headers|Nil=nil,*,form:Hash(String,String)|NamedTuple,decompress:Bool=true,timeout:Time::Span=10.seconds,trust_all_certs:Bool=false,proxy_addr:String|Nil=nil):HTTP::Client::Response-class-method">
+      <div class="signature">
+        
+        def self.<strong>post</strong>(path, headers : HTTP::Headers | Nil = <span class="n">nil</span>, *, form : Hash(String, String) | NamedTuple, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response
+
+        <a class="method-permalink" href="#post%28path%2Cheaders%3AHTTP%3A%3AHeaders%7CNil%3Dnil%2C%2A%2Cform%3AHash%28String%2CString%29%7CNamedTuple%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Executes a POST request with form data and returns a <code>Response</code>. The &quot;Content-Type&quot; header is set
+to &quot;application/x-www-form-urlencoded&quot;.</p>
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;puppy&quot;</span>
+
+response <span class="o">=</span> <span class="t">Puppy</span>.post <span class="s">&quot;https://www.example.com&quot;</span>, form: {<span class="s">&quot;foo&quot;</span> <span class="o">=&gt;</span> <span class="s">&quot;bar&quot;</span>}</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="put(path:String,headers:HTTP::Headers|Nil=nil,body:IO|Bytes|String|Nil=nil,decompress:Bool=true,timeout:Time::Span=10.seconds,trust_all_certs:Bool=false,proxy_addr:String|Nil=nil):HTTP::Client::Response-class-method">
+      <div class="signature">
+        
+        def self.<strong>put</strong>(path : String, headers : HTTP::Headers | Nil = <span class="n">nil</span>, body : IO | Bytes | String | Nil = <span class="n">nil</span>, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response
+
+        <a class="method-permalink" href="#put%28path%3AString%2Cheaders%3AHTTP%3A%3AHeaders%7CNil%3Dnil%2Cbody%3AIO%7CBytes%7CString%7CNil%3Dnil%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Executes a PUT request.
+The response will have its body_io as a <code>IO</code>, accessed via <code>HTTP::Client::Response#body_io</code>.</p>
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;puppy&quot;</span>
+
+response <span class="o">=</span> <span class="t">Puppy</span>.put(<span class="s">&quot;https://www.example.com&quot;</span>, headers: <span class="t">HTTP</span><span class="t">::</span><span class="t">Headers</span>{<span class="s">&quot;User-Agent&quot;</span> <span class="o">=&gt;</span> <span class="s">&quot;AwesomeApp&quot;</span>}, body: <span class="s">&quot;Hello!&quot;</span>)
+response.body <span class="c">#=&gt; &quot;...&quot;</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="put(path,headers:HTTP::Headers|Nil=nil,*,form:String|IO,decompress:Bool=true,timeout:Time::Span=10.seconds,trust_all_certs:Bool=false,proxy_addr:String|Nil=nil):HTTP::Client::Response-class-method">
+      <div class="signature">
+        
+        def self.<strong>put</strong>(path, headers : HTTP::Headers | Nil = <span class="n">nil</span>, *, form : String | IO, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response
+
+        <a class="method-permalink" href="#put%28path%2Cheaders%3AHTTP%3A%3AHeaders%7CNil%3Dnil%2C%2A%2Cform%3AString%7CIO%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Executes a PUT request with form data and returns a <code>Response</code>. The &quot;Content-Type&quot; header is set
+to &quot;application/x-www-form-urlencoded&quot;.</p>
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;puppy&quot;</span>
+
+response <span class="o">=</span> <span class="t">Puppy</span>.put <span class="s">&quot;https://www.example.com&quot;</span>, form: <span class="s">&quot;foo=bar&quot;</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="put(path,headers:HTTP::Headers|Nil=nil,*,form:Hash(String,String)|NamedTuple,decompress:Bool=true,timeout:Time::Span=10.seconds,trust_all_certs:Bool=false,proxy_addr:String|Nil=nil):HTTP::Client::Response-class-method">
+      <div class="signature">
+        
+        def self.<strong>put</strong>(path, headers : HTTP::Headers | Nil = <span class="n">nil</span>, *, form : Hash(String, String) | NamedTuple, decompress : Bool = <span class="n">true</span>, timeout : Time::Span = <span class="n">10</span>.seconds, trust_all_certs : Bool = <span class="n">false</span>, proxy_addr : String | Nil = <span class="n">nil</span>) : HTTP::Client::Response
+
+        <a class="method-permalink" href="#put%28path%2Cheaders%3AHTTP%3A%3AHeaders%7CNil%3Dnil%2C%2A%2Cform%3AHash%28String%2CString%29%7CNamedTuple%2Cdecompress%3ABool%3Dtrue%2Ctimeout%3ATime%3A%3ASpan%3D10.seconds%2Ctrust_all_certs%3ABool%3Dfalse%2Cproxy_addr%3AString%7CNil%3Dnil%29%3AHTTP%3A%3AClient%3A%3AResponse-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Executes a PUT request with form data and returns a <code>Response</code>. The &quot;Content-Type&quot; header is set
+to &quot;application/x-www-form-urlencoded&quot;.</p>
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;puppy&quot;</span>
+
+response <span class="o">=</span> <span class="t">Puppy</span>.put <span class="s">&quot;https://www.example.com&quot;</span>, form: {<span class="s">&quot;foo&quot;</span> <span class="o">=&gt;</span> <span class="s">&quot;bar&quot;</span>}</code></pre>
+        </div>
+      
+      <br/>
+      <div>
         
       </div>
     </div>
