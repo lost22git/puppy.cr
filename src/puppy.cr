@@ -15,7 +15,7 @@ module Puppy
   # require "puppy"
   # request = HTTP::Request.new "GET", "https://www.example.com"
   # response = Puppy.exec(request, decompress: true, timeout: 10.seconds, trust_all_certs: false, proxy_addr: "http://proxy_host:proxy_prort")
-  # response.body # => "..."
+  # response.body_io.gets_to_end # => "..."
   # ```
   def self.exec(request : HTTP::Request, decompress : Bool = true, timeout : Time::Span = 10.seconds, trust_all_certs : Bool = false, proxy_addr : String? = nil) : HTTP::Client::Response
     request.headers["User-Agent"] = UA unless request.headers["User-Agent"]?
@@ -30,7 +30,7 @@ module Puppy
     # require "puppy"
     #
     # response = Puppy.{{method.id}}("https://www.example.com", headers: HTTP::Headers{"User-Agent" => "AwesomeApp"}, body: "Hello!")
-    # response.body #=> "..."
+    # response.body_io.gets_to_end #=> "..."
     # ```
     def self.{{method.id}}(path : String, headers : HTTP::Headers? = nil, body : IO | Bytes | String | Nil = nil, decompress : Bool = true, timeout : Time::Span = 10.seconds, trust_all_certs : Bool = false, proxy_addr : String? = nil) : HTTP::Client::Response
       request = HTTP::Request.new {{ method.upcase }}, path, headers, body

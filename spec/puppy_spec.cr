@@ -94,4 +94,10 @@ describe Puppy do
 
   #   resp = Puppy.get url, headers, timeout: 1.seconds
   # end
+
+  it "post json" do
+    resp = Puppy.post "https://httpbin.org/post", HTTP::Headers{"content-type" => "application/json; charset=UTF-8"}, {"title" => "foo", "body" => "bar"}.to_json
+    json = JSON.parse(resp.body_io)
+    json.dig("json", "title").as_s.should eq "foo"
+  end
 end

@@ -10,7 +10,8 @@ module Puppy::Fetch
   #
   macro dbg!(v)
     {% if !flag?(:release) %}
-      p! {{ v }}
+      print "[PuppyDebug] "
+      pp! {{ v }}
     {% end %}
   end
 
