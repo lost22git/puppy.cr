@@ -2,7 +2,26 @@
 
 [API DOC](https://lost22git.github.io/puppy.cr)
 
-TODO: Write a description here
+Http Client based on platform http api.
+
+Inspire from [puppy nim](https://github.com/treeform/puppy)
+
+## Status
+
+- [x] Windows
+- [ ] Linux 
+- [ ] Macos
+
+## Feature
+
+- No openssl required (aka. you can `crystal build -Dwithout_openssl`)
+- Http proxy support
+
+
+## Limit
+
+- No support response body streaming
+- More to be discover
 
 ## Installation
 
@@ -20,13 +39,20 @@ TODO: Write a description here
 
 ```crystal
 require "puppy"
+
+response = Puppy.get "https://httpbin.org/status/444"
+
+puts response.body_io.gets_to_end
 ```
 
-TODO: Write usage instructions here
 
 ## Development
 
-TODO: Write development instructions here
+### Run tests
+
+```sh
+crystal spec --progress
+```
 
 ## Contributing
 

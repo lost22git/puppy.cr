@@ -94,7 +94,36 @@
   </svg>
 </a>puppy</h1>
 <p><a href="https://lost22git.github.io/puppy.cr">API DOC</a></p>
-<p><span class="flag orange">TODO</span>  Write a description here</p>
+<p>Http Client based on platform http api.</p>
+<p>Inspire from <a href="https://github.com/treeform/puppy">puppy nim</a></p>
+<h2><a id="status" class="anchor" href="#status">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Status</h2>
+<ul>
+<li>[x] Windows</li>
+<li>[ ] Linux</li>
+<li>[ ] Macos</li>
+</ul>
+<h2><a id="feature" class="anchor" href="#feature">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Feature</h2>
+<ul>
+<li>No openssl required (aka. you can <code>crystal build -Dwithout_openssl</code>)</li>
+<li>Http proxy support</li>
+</ul>
+<h2><a id="limit" class="anchor" href="#limit">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Limit</h2>
+<ul>
+<li>No support response body streaming</li>
+<li>More to be discover</li>
+</ul>
 <h2><a id="installation" class="anchor" href="#installation">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
@@ -116,14 +145,22 @@
     <use href="#octicon-link"/>
   </svg>
 </a>Usage</h2>
-<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;puppy&quot;</span></code></pre>
-<p><span class="flag orange">TODO</span>  Write usage instructions here</p>
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;puppy&quot;</span>
+
+response <span class="o">=</span> <span class="t">Puppy</span>.get <span class="s">&quot;https://httpbin.org/status/444&quot;</span>
+
+puts response.body_io.gets_to_end</code></pre>
 <h2><a id="development" class="anchor" href="#development">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Development</h2>
-<p><span class="flag orange">TODO</span>  Write development instructions here</p>
+<h3><a id="run-tests" class="anchor" href="#run-tests">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Run tests</h3>
+<pre><code class="language-sh">crystal spec --progress</code></pre>
 <h2><a id="contributing" class="anchor" href="#contributing">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
