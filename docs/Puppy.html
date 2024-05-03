@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Crystal Docs 1.11.2">
-<meta name="crystal_docs.project_version" content="main-dev">
+<meta name="crystal_docs.project_version" content="main">
 <meta name="crystal_docs.project_name" content="puppy">
 
 
@@ -14,7 +14,7 @@
 <script type="text/javascript" src="js/doc.js"></script>
 
   <meta name="repository-name" content="puppy">
-  <title>Puppy - puppy main-dev</title>
+  <title>Puppy - puppy main</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "";
   </script>
@@ -45,7 +45,7 @@
       </h1>
 
       <span class="project-version">
-        main-dev
+        main
       </span>
     </div>
   </div>
@@ -122,17 +122,23 @@
   </h2>
   
     
-      src\puppy.cr
+      <a href="https://github.com/lost22git/puppy.cr/blob/55c56c5a89e246c99bfff4f21aa656575472b768/src\puppy.cr#L8" target="_blank">
+        src\puppy.cr
+      </a>
     
     <br/>
   
     
-      src\puppy\fetch.cr
+      <a href="https://github.com/lost22git/puppy.cr/blob/55c56c5a89e246c99bfff4f21aa656575472b768/src\puppy\fetch.cr#L1" target="_blank">
+        src\puppy\fetch.cr
+      </a>
     
     <br/>
   
     
-      src\puppy\version.cr
+      <a href="https://github.com/lost22git/puppy.cr/blob/55c56c5a89e246c99bfff4f21aa656575472b768/src\puppy\version.cr#L1" target="_blank">
+        src\puppy\version.cr
+      </a>
     
     <br/>
   
@@ -365,11 +371,13 @@ The response will have its body_io as a <code>IO</code>, accessed via <code>HTTP
 <pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;puppy&quot;</span>
 
 response <span class="o">=</span> <span class="t">Puppy</span>.delete(<span class="s">&quot;https://www.example.com&quot;</span>, headers: <span class="t">HTTP</span><span class="t">::</span><span class="t">Headers</span>{<span class="s">&quot;User-Agent&quot;</span> <span class="o">=&gt;</span> <span class="s">&quot;AwesomeApp&quot;</span>}, body: <span class="s">&quot;Hello!&quot;</span>)
-response.body <span class="c">#=&gt; &quot;...&quot;</span></code></pre>
+response.body_io.gets_to_end <span class="c">#=&gt; &quot;...&quot;</span></code></pre>
         </div>
       
       <br/>
       <div>
+        
+          [<a href="https://github.com/lost22git/puppy.cr/blob/55c56c5a89e246c99bfff4f21aa656575472b768/src\puppy.cr#L25" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -394,6 +402,8 @@ response <span class="o">=</span> <span class="t">Puppy</span>.delete <span clas
       <br/>
       <div>
         
+          [<a href="https://github.com/lost22git/puppy.cr/blob/55c56c5a89e246c99bfff4f21aa656575472b768/src\puppy.cr#L25" target="_blank">View source</a>]
+        
       </div>
     </div>
   
@@ -417,6 +427,8 @@ response <span class="o">=</span> <span class="t">Puppy</span>.delete <span clas
       <br/>
       <div>
         
+          [<a href="https://github.com/lost22git/puppy.cr/blob/55c56c5a89e246c99bfff4f21aa656575472b768/src\puppy.cr#L25" target="_blank">View source</a>]
+        
       </div>
     </div>
   
@@ -435,11 +447,13 @@ The response will have its body_io as a <code>IO</code>, accessed via <code>HTTP
 <pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;puppy&quot;</span>
 request <span class="o">=</span> <span class="t">HTTP</span><span class="t">::</span><span class="t">Request</span>.new <span class="s">&quot;GET&quot;</span>, <span class="s">&quot;https://www.example.com&quot;</span>
 response <span class="o">=</span> <span class="t">Puppy</span>.exec(request, decompress: <span class="n">true</span>, timeout: <span class="n">10</span>.seconds, trust_all_certs: <span class="n">false</span>, proxy_addr: <span class="s">&quot;http://proxy_host:proxy_prort&quot;</span>)
-response.body <span class="c"># =&gt; &quot;...&quot;</span></code></pre>
+response.body_io.gets_to_end <span class="c"># =&gt; &quot;...&quot;</span></code></pre>
         </div>
       
       <br/>
       <div>
+        
+          [<a href="https://github.com/lost22git/puppy.cr/blob/55c56c5a89e246c99bfff4f21aa656575472b768/src\puppy.cr#L20" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -459,11 +473,13 @@ The response will have its body_io as a <code>IO</code>, accessed via <code>HTTP
 <pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;puppy&quot;</span>
 
 response <span class="o">=</span> <span class="t">Puppy</span>.get(<span class="s">&quot;https://www.example.com&quot;</span>, headers: <span class="t">HTTP</span><span class="t">::</span><span class="t">Headers</span>{<span class="s">&quot;User-Agent&quot;</span> <span class="o">=&gt;</span> <span class="s">&quot;AwesomeApp&quot;</span>}, body: <span class="s">&quot;Hello!&quot;</span>)
-response.body <span class="c">#=&gt; &quot;...&quot;</span></code></pre>
+response.body_io.gets_to_end <span class="c">#=&gt; &quot;...&quot;</span></code></pre>
         </div>
       
       <br/>
       <div>
+        
+          [<a href="https://github.com/lost22git/puppy.cr/blob/55c56c5a89e246c99bfff4f21aa656575472b768/src\puppy.cr#L25" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -488,6 +504,8 @@ response <span class="o">=</span> <span class="t">Puppy</span>.get <span class="
       <br/>
       <div>
         
+          [<a href="https://github.com/lost22git/puppy.cr/blob/55c56c5a89e246c99bfff4f21aa656575472b768/src\puppy.cr#L25" target="_blank">View source</a>]
+        
       </div>
     </div>
   
@@ -511,6 +529,8 @@ response <span class="o">=</span> <span class="t">Puppy</span>.get <span class="
       <br/>
       <div>
         
+          [<a href="https://github.com/lost22git/puppy.cr/blob/55c56c5a89e246c99bfff4f21aa656575472b768/src\puppy.cr#L25" target="_blank">View source</a>]
+        
       </div>
     </div>
   
@@ -529,11 +549,13 @@ The response will have its body_io as a <code>IO</code>, accessed via <code>HTTP
 <pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;puppy&quot;</span>
 
 response <span class="o">=</span> <span class="t">Puppy</span>.head(<span class="s">&quot;https://www.example.com&quot;</span>, headers: <span class="t">HTTP</span><span class="t">::</span><span class="t">Headers</span>{<span class="s">&quot;User-Agent&quot;</span> <span class="o">=&gt;</span> <span class="s">&quot;AwesomeApp&quot;</span>}, body: <span class="s">&quot;Hello!&quot;</span>)
-response.body <span class="c">#=&gt; &quot;...&quot;</span></code></pre>
+response.body_io.gets_to_end <span class="c">#=&gt; &quot;...&quot;</span></code></pre>
         </div>
       
       <br/>
       <div>
+        
+          [<a href="https://github.com/lost22git/puppy.cr/blob/55c56c5a89e246c99bfff4f21aa656575472b768/src\puppy.cr#L25" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -558,6 +580,8 @@ response <span class="o">=</span> <span class="t">Puppy</span>.head <span class=
       <br/>
       <div>
         
+          [<a href="https://github.com/lost22git/puppy.cr/blob/55c56c5a89e246c99bfff4f21aa656575472b768/src\puppy.cr#L25" target="_blank">View source</a>]
+        
       </div>
     </div>
   
@@ -581,6 +605,8 @@ response <span class="o">=</span> <span class="t">Puppy</span>.head <span class=
       <br/>
       <div>
         
+          [<a href="https://github.com/lost22git/puppy.cr/blob/55c56c5a89e246c99bfff4f21aa656575472b768/src\puppy.cr#L25" target="_blank">View source</a>]
+        
       </div>
     </div>
   
@@ -599,11 +625,13 @@ The response will have its body_io as a <code>IO</code>, accessed via <code>HTTP
 <pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;puppy&quot;</span>
 
 response <span class="o">=</span> <span class="t">Puppy</span>.options(<span class="s">&quot;https://www.example.com&quot;</span>, headers: <span class="t">HTTP</span><span class="t">::</span><span class="t">Headers</span>{<span class="s">&quot;User-Agent&quot;</span> <span class="o">=&gt;</span> <span class="s">&quot;AwesomeApp&quot;</span>}, body: <span class="s">&quot;Hello!&quot;</span>)
-response.body <span class="c">#=&gt; &quot;...&quot;</span></code></pre>
+response.body_io.gets_to_end <span class="c">#=&gt; &quot;...&quot;</span></code></pre>
         </div>
       
       <br/>
       <div>
+        
+          [<a href="https://github.com/lost22git/puppy.cr/blob/55c56c5a89e246c99bfff4f21aa656575472b768/src\puppy.cr#L25" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -628,6 +656,8 @@ response <span class="o">=</span> <span class="t">Puppy</span>.options <span cla
       <br/>
       <div>
         
+          [<a href="https://github.com/lost22git/puppy.cr/blob/55c56c5a89e246c99bfff4f21aa656575472b768/src\puppy.cr#L25" target="_blank">View source</a>]
+        
       </div>
     </div>
   
@@ -651,6 +681,8 @@ response <span class="o">=</span> <span class="t">Puppy</span>.options <span cla
       <br/>
       <div>
         
+          [<a href="https://github.com/lost22git/puppy.cr/blob/55c56c5a89e246c99bfff4f21aa656575472b768/src\puppy.cr#L25" target="_blank">View source</a>]
+        
       </div>
     </div>
   
@@ -669,11 +701,13 @@ The response will have its body_io as a <code>IO</code>, accessed via <code>HTTP
 <pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;puppy&quot;</span>
 
 response <span class="o">=</span> <span class="t">Puppy</span>.patch(<span class="s">&quot;https://www.example.com&quot;</span>, headers: <span class="t">HTTP</span><span class="t">::</span><span class="t">Headers</span>{<span class="s">&quot;User-Agent&quot;</span> <span class="o">=&gt;</span> <span class="s">&quot;AwesomeApp&quot;</span>}, body: <span class="s">&quot;Hello!&quot;</span>)
-response.body <span class="c">#=&gt; &quot;...&quot;</span></code></pre>
+response.body_io.gets_to_end <span class="c">#=&gt; &quot;...&quot;</span></code></pre>
         </div>
       
       <br/>
       <div>
+        
+          [<a href="https://github.com/lost22git/puppy.cr/blob/55c56c5a89e246c99bfff4f21aa656575472b768/src\puppy.cr#L25" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -698,6 +732,8 @@ response <span class="o">=</span> <span class="t">Puppy</span>.patch <span class
       <br/>
       <div>
         
+          [<a href="https://github.com/lost22git/puppy.cr/blob/55c56c5a89e246c99bfff4f21aa656575472b768/src\puppy.cr#L25" target="_blank">View source</a>]
+        
       </div>
     </div>
   
@@ -721,6 +757,8 @@ response <span class="o">=</span> <span class="t">Puppy</span>.patch <span class
       <br/>
       <div>
         
+          [<a href="https://github.com/lost22git/puppy.cr/blob/55c56c5a89e246c99bfff4f21aa656575472b768/src\puppy.cr#L25" target="_blank">View source</a>]
+        
       </div>
     </div>
   
@@ -739,11 +777,13 @@ The response will have its body_io as a <code>IO</code>, accessed via <code>HTTP
 <pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;puppy&quot;</span>
 
 response <span class="o">=</span> <span class="t">Puppy</span>.post(<span class="s">&quot;https://www.example.com&quot;</span>, headers: <span class="t">HTTP</span><span class="t">::</span><span class="t">Headers</span>{<span class="s">&quot;User-Agent&quot;</span> <span class="o">=&gt;</span> <span class="s">&quot;AwesomeApp&quot;</span>}, body: <span class="s">&quot;Hello!&quot;</span>)
-response.body <span class="c">#=&gt; &quot;...&quot;</span></code></pre>
+response.body_io.gets_to_end <span class="c">#=&gt; &quot;...&quot;</span></code></pre>
         </div>
       
       <br/>
       <div>
+        
+          [<a href="https://github.com/lost22git/puppy.cr/blob/55c56c5a89e246c99bfff4f21aa656575472b768/src\puppy.cr#L25" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -768,6 +808,8 @@ response <span class="o">=</span> <span class="t">Puppy</span>.post <span class=
       <br/>
       <div>
         
+          [<a href="https://github.com/lost22git/puppy.cr/blob/55c56c5a89e246c99bfff4f21aa656575472b768/src\puppy.cr#L25" target="_blank">View source</a>]
+        
       </div>
     </div>
   
@@ -791,6 +833,8 @@ response <span class="o">=</span> <span class="t">Puppy</span>.post <span class=
       <br/>
       <div>
         
+          [<a href="https://github.com/lost22git/puppy.cr/blob/55c56c5a89e246c99bfff4f21aa656575472b768/src\puppy.cr#L25" target="_blank">View source</a>]
+        
       </div>
     </div>
   
@@ -809,11 +853,13 @@ The response will have its body_io as a <code>IO</code>, accessed via <code>HTTP
 <pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;puppy&quot;</span>
 
 response <span class="o">=</span> <span class="t">Puppy</span>.put(<span class="s">&quot;https://www.example.com&quot;</span>, headers: <span class="t">HTTP</span><span class="t">::</span><span class="t">Headers</span>{<span class="s">&quot;User-Agent&quot;</span> <span class="o">=&gt;</span> <span class="s">&quot;AwesomeApp&quot;</span>}, body: <span class="s">&quot;Hello!&quot;</span>)
-response.body <span class="c">#=&gt; &quot;...&quot;</span></code></pre>
+response.body_io.gets_to_end <span class="c">#=&gt; &quot;...&quot;</span></code></pre>
         </div>
       
       <br/>
       <div>
+        
+          [<a href="https://github.com/lost22git/puppy.cr/blob/55c56c5a89e246c99bfff4f21aa656575472b768/src\puppy.cr#L25" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -838,6 +884,8 @@ response <span class="o">=</span> <span class="t">Puppy</span>.put <span class="
       <br/>
       <div>
         
+          [<a href="https://github.com/lost22git/puppy.cr/blob/55c56c5a89e246c99bfff4f21aa656575472b768/src\puppy.cr#L25" target="_blank">View source</a>]
+        
       </div>
     </div>
   
@@ -860,6 +908,8 @@ response <span class="o">=</span> <span class="t">Puppy</span>.put <span class="
       
       <br/>
       <div>
+        
+          [<a href="https://github.com/lost22git/puppy.cr/blob/55c56c5a89e246c99bfff4f21aa656575472b768/src\puppy.cr#L25" target="_blank">View source</a>]
         
       </div>
     </div>
