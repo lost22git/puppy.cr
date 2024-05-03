@@ -96,8 +96,11 @@ describe Puppy do
   # end
 
   it "post json" do
+    # curl -X POST "https://httpbin.org/post" -H  "accept: application/json" -H "content-type: application/json" -d "{\"title\": \"foo\", \"body\": \"bar\"}"
+    #
     resp = Puppy.post "https://httpbin.org/post", HTTP::Headers{"content-type" => "application/json; charset=UTF-8"}, {"title" => "foo", "body" => "bar"}.to_json
     json = JSON.parse(resp.body_io)
     json.dig("json", "title").as_s.should eq "foo"
+    json.dig("json", "body").as_s.should eq "bar"
   end
 end

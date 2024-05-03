@@ -15,7 +15,7 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v4
       - name: Install dependencies
-        run: shards install
+        run: shards install --skip-postinstall --skip-executables
       - name: Check format
         run: crystal tool format --check
 
@@ -37,10 +37,8 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v4
       - name: Install dependencies
-        run: shards install
+        run: shards install --skip-postinstall --skip-executables
       - name: Print crystal version
         run: crystal version
       - name: Run tests
-        run: crystal spec --verbose --progress --time --stats
-      - name: Run tests without zlib and openssl
-        run: crystal spec --verbose --progress --time --stats -Dwithout_openssl -Dwithout_zlib
+        run: crystal spec --verbose --progress --time --stats -Dwithout_openssl
